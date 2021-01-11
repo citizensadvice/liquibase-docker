@@ -1,0 +1,13 @@
+pre_conf_commands:
+  # append jar files to the liquibase classpath
+  - /opt/liquibase/custom_classpath.sh >> /opt/liquibase/liquibase.properties.tpl
+
+# These files should exist (ADD or COPY)
+# and should be jinja templated.
+# Note: if config files end with ".tpl", the extension will be removed.
+config_files:
+  - /opt/liquibase/liquibase.properties.tpl: /liquibase/liquibase.properties
+
+debug: true
+
+clean_env: false
